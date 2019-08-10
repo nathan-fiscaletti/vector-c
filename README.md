@@ -2,4 +2,4 @@
 
 See [test.c](./test.c) for example usage.
 
-Build using `./build.sh`
+Test using `./test.sh`
