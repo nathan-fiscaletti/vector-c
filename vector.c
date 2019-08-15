@@ -62,7 +62,15 @@ void* vector_shift(struct vector* v) {
 }
 
 void vector_delete(struct vector* v, int idx) {
-    // TODO
+    for (int i = 0; i<v->count; i++) {
+        if (i == idx) {
+            v->elements[i] = NULL;
+        } else if (i > idx) {
+            v->elements[i-1] = v->elements[i];
+        }
+    }
+
+    vector_resize(v, -1);
 }
 
 int vector_index_of(struct vector *v, void* elem) {
@@ -101,4 +109,8 @@ void vector_pad(struct vector *v, int count, void* elem) {
 
 int vector_is_empty(struct vector *v) {
     return v->count < 1;
+}
+
+void vector_clear(struct vector *v) {
+    vector_resize(v, -(v->count));
 }

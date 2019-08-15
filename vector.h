@@ -17,8 +17,10 @@ void vector_push(struct vector *v, void* elem);
 void* vector_pop(struct vector *v);
 void vector_unshift(struct vector* v, void* elem);
 void* vector_shift(struct vector* v);
+void vector_delete(struct vector* v, int idx);
 void vector_pad(struct vector *v, int count, void* elem);
 int vector_index_of(struct vector *v, void* elem);
 int vector_is_empty(struct vector *v);
+void vector_clear(struct vector *v);
 
 #endif //VECTOR_H

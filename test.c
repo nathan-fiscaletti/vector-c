@@ -53,6 +53,26 @@ int main(void) {
     // Retrieve the index of the last element.
     printf("getting index of %d...\n", i2);
     printf("index of %d: %d\n", i2, vector_index_of(v, &i2));
+    printf("\n");
+
+    // Delete an index
+    printf("deleting index 2\n");
+    vector_delete(v, 2);
+
+    printf("printing...\n");
+    for (int i = 0; i < v->count; i++) {
+        if (i < 2) {
+            printf("index %d: %s\n", i, (char*)vector_get(v, i));
+        } else {
+            printf("index %d: %d\n", i, *((int*)vector_get(v, i)));
+        }
+    }
+    printf("\n");
+
+    // Clear the Vector
+    printf("Clearing vector...\n");
+    vector_clear(v);
+    printf("Vector cleared, New vector count: %d\n", v->count);
 
     // free the vector object.
     vector_free(v);
